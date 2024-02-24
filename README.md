@@ -1,2 +1,5 @@
 # ShumaxerOCR
-Collection of tools for proceeding Russian educational books
+
+Библиотека названача в честь великого российского библиотекаря Шумахера Иван Данилович.
+
+Описание библиотеки приведено в [статье](/article)
