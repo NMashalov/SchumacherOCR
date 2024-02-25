@@ -1,5 +1,41 @@
-# ShumaxerOCR
+# SchumacherOCR
 
-Библиотека названача в честь великого российского библиотекаря Шумахера Иван Данилович.
+![logo](/assets/logo.svg)
 
-Описание библиотеки приведено в [статье](/article)
+Библиотека предоставляет модули для работы с изображениями в педагогических 
+
+## Установка
+
+```bash
+pip install SchumacherOCR
+```
+
+## 
+
+### Работа с изображением
+
+```python
+from Schumacher.Ocr import Processor
+
+Processor
+
+```
+### Пайплайн обработки
+
+```python
+from Schumacher.Ocr import Processor
+
+Processor
+
+```
+
+
+## Обучение
+
+Разметка в [Label Studio](https://labelstud.io/).
+
+
+
+
+
+Сопровождающая [статья](/article)
