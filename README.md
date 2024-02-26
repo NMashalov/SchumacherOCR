@@ -1,8 +1,25 @@
 # SchumacherOCR
 
-![logo](/assets/logo.svg)
+Библиотека предоставляет модули для работы с педагогическими документами
 
-Библиотека предоставляет модули для работы с изображениями в педагогических 
+|![logo](/assets/target.png)|
+|:--:|
+|Библиотека назван в честь великого русского библиотекаря [Шумахера Ивана Даниловича](https://ru.wikipedia.org/wiki/%D0%A8%D1%83%D0%BC%D0%B0%D1%85%D0%B5%D1%80,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%94%D0%B0%D0%BD%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87).|
+
+Модули библиотеки:
+- `Ocr` распознает текст материала. Для распознания используется адаптированная для русского языка модель [Nougat]() 
+- `Illustration` модуль за получение аннотированных изображений из текста. 
+
+
+![functional.png](/assets/illust.excalidraw.png)
+Дополнительно представлены вспомогательные модули
+- `Process` для трасировки полученных изображений и повышения их разрешения
+- `Datasets` для обучения функционала библиотеки и проведения экспериментов
+
+
+Библиотека работает в двух режимах:
+- на одном изображении 
+- на документе формата `pdf` или `djvu`
 
 ## Установка
 
@@ -10,44 +27,61 @@
 pip install SchumacherOCR
 ```
 
-## Работа с изображением
+Веса нейросетей подгрузятся автоматически при начале использования. Примите во внимание, что использование графических ускорителей (gpu) может значительно ускорить процесс обработки
+
+## Примеры работы
+
 
 ### Выделение иллюстраций и аннотаций
 
 ```python
-from Schumacher.Ocr import Processor
+from Schumacher.Illustration import extract_illustrations, show
 
-Processor
-
+boxes,annotation = extract_illustrations('Название изображения.png')
+show(boxes,annotation)
 ```
-## Работа с документом или книгой
+
+Результат исполнения:
+
+![illustration](/assets/illust_output.png)
+
+
+### Выделение текста
 
 ```python
-from Schumacher.Ocr import Processor
+from Schumacher.Ocr import extract_text
 
-Processor
+text = extract_text('Название изображения.png')
+
+> '107\nЭлектричество и магнетизм\n13.37*.\n\nКакой ток идет чер'
+```
+### Работа с книгой
+
+
+```python
+from Schumacher.Book import Book
+
+dataset = Book('НАЗВАНИЕ ВАШЕЙ КНИЖКИ')
+```
+Результатом служит [dataset HuggingFace](https://huggingface.co/docs/datasets/en/index), который вы можете опубликовать через
+
+```python
+dataset.push_to_hub('НАЗВАНИЕ РЕПОЗИТОРИЯ',token=<ВАШ HF token>)
 ```
 
-## Датасеты
 
-Для оценки качества моделирования вы можете использовать уже размеченный датасет с а
+## Выполнение для разметки
 
-https://huggingface.co/datasets/NMashalov/ru_educational_book_datasets
-
-## Обучение
-
-
-Разметка в [Label Studio](https://labelstud.io/).
+Разметка документов проводится в [Label Studio](https://labelstud.io/).
 
 Для разметки репозиторий необходимо склонировать и установить `docker` для вашей операционной системы 
 
 Для клонирования выполните
 ```
-git clone
+git clone https://github.com/NMashalov/SchumacherOCR
 ```
 
-Далее следуете  [](/labeling/README.md)
-
+Далее следуете [инструкции](/labeling/README.md)
 
 ## Разработка
 
@@ -56,5 +90,7 @@ git clone
 Публикация репозитория на pypi выполняется через Github Actions
 
 
+## Правила использования
 
+Все права образовательных принадлежат издательствам и авторам. Использование библиотеки возможно только для личных целей на некоммерческой основе
 
