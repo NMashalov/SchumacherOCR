@@ -69,6 +69,8 @@ dataset = Book('НАЗВАНИЕ ВАШЕЙ КНИЖКИ')
 dataset.push_to_hub('НАЗВАНИЕ РЕПОЗИТОРИЯ',token=<ВАШ HF token>)
 ```
 
+Соединение между задачей и рисунком выполняется по аннотации внутри страницы. 
+
 
 ## Выполнение для разметки
 
@@ -94,3 +96,14 @@ git clone https://github.com/NMashalov/SchumacherOCR
 
 Все права образовательных принадлежат издательствам и авторам. Использование библиотеки возможно только для личных целей на некоммерческой основе
 
+
+## Цитирование
+
+```
+@misc{mashalov2023Schuemacher,
+      title={SchuemacherOCR}, 
+      author={Mashalov Nikita},
+      year={2023},
+      primaryClass={cs.LG}
+}
+```

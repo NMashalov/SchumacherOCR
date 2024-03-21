@@ -4,6 +4,8 @@ from datasets import load_dataset, Image
 Images are hold as binary strings for speed of processing
 '''
 
+def diploma():
+    pass
 
 def get_ocr_dataset():
     return load_dataset("NMashalov/ru_book_datasets").cast_column('image', Image(decode=False))

@@ -1,5 +1,13 @@
 # Load model directly
-from transformers import AutoImageProcessor, AutoModelForObjectDetection
+import pytesseract
+from PIL import Image
 
-processor = AutoImageProcessor.from_pretrained("NMashalov/PhysicsYoLO")
-model = AutoModelForObjectDetection.from_pretrained("NMashalov/PhysicsYoLO")
+class Tesseract:
+    '''
+    Suitable for workbooks
+    '''
+    def __init__(self, img_folder):
+        pass
+
+    def ocr(self):
+        print(pytesseract.image_to_string(Image.open('test.png')))

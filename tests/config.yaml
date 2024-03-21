@@ -1,0 +1,22 @@
+doc:
+  path: # абсолютный путь или путь
+  reference:
+    title: Задачник по физике
+    authors:
+      - Кирик
+    extra:
+      publish_year: 2000
+      publisher: Физмат
+  indexes: # если пусто, то целиком
+    - 1-100 
+    - 121
+  options:
+    text_processor: tesseract # вид обработчика снимающего текст
+    image_processor: yolo # вид обработчика получающего иллюстрации
+    image_folder: True # получить директорию со всеми извлеченными изображениями
+
+
+  
+
+
+  

@@ -1,1 +1,5 @@
-.venv
+.venv/
+__pycache__/
+labeling/data/*
+labeling/files/*
+.pytest_cache

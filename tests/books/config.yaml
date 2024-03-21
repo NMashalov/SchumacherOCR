@@ -1,0 +1,11 @@
+reference:
+  author: Я.И. Перельман
+  name: Живая геометрия. Теория и задачи
+  publisher: Универсальное научное издательство
+page_number:
+  - 4-90
+resource: https://math.ru/lib/book/djvu/perelman/alive_math.djvu
+format: pdf
+img_folder: False
+output: 
+  schema: json
